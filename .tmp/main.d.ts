@@ -7,4 +7,4 @@ export interface State {
 export declare class Component extends React.Component<Props, State> {
     render(): JSX.Element;
 }
-export declare function bootstrap(name: string): void;
+export declare function bootstrap(props: Props): void;

@@ -15,8 +15,11 @@ var Component = (function (_super) {
     return Component;
 })(React.Component);
 exports.Component = Component;
-function bootstrap(name) {
-    React.render(React.createElement(Component, {"title": name}), document.getElementById("app"));
+function bootstrap(props) {
+    var div = document.createElement("DIV");
+    div.id = "app";
+    document.body.appendChild(div);
+    React.render(React.createElement(Component, React.__spread({}, props)), div);
 }
 exports.bootstrap = bootstrap;
 //# sourceMappingURL=main.js.map
