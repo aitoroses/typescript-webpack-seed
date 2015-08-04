@@ -20,12 +20,12 @@ if (process.env.COMPRESS) {
 module.exports = {
 
   entry: {
-    main: './src/app.js'
+    main: './lib/main.js'
   },
 
   output: {
-    library: "App",
-    libraryTarget: 'umd',
+    // library: "App",
+    // libraryTarget: 'umd',
     path: "dist",
     filename: "bundle.js"
   },
