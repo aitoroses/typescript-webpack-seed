@@ -30,31 +30,20 @@ module.exports = {
     filename: "bundle.js"
   },
 
-  externals: [
-     {
-       "react/addons": {
-         root: "React",
-         commonjs2: "react",
-         commonjs: "react",
-         amd: "react"
-       },
-     },
-     {
-       "react": {
-         root: "React",
-         commonjs2: "react",
-         commonjs: "react",
-         amd: "react"
-       },
-     }
-  ],
+  externals: {
+    'react/addons': 'React'
+  },
 
   module: {
     loaders: [
-      // { test: /\.js$/, loader: 'babel?stage=0', exclude: /node_modules/ },
-      { test: /\.js$/, loader: 'source-map', exclude: /node_modules/ },
-      { test: /\.css$/, loader: 'style!css' },
+      // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
+      { test: /\.ts(x?)$/, loader: 'ts-loader' },
+      { test: /\.css$/, loader: 'style!css' }
     ]
+  },
+
+  ts: {
+    compiler: 'ntypescript'
   },
 
   resolve: {
@@ -64,8 +53,11 @@ module.exports = {
       path.resolve("assets")
     ],
     extensions: [
-      '', '.js', '.jsx'
-    ]
+      '', '.js', '.jsx', '.ts', '.tsx'
+    ],
+    alias: {
+      react: 'react/addons'
+    }
   },
 
   node: {

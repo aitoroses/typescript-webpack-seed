@@ -22,7 +22,7 @@
         "./typings/tsd.d.ts",
         "./src/main.tsx"
     ],
-    "compileOnSave": true,
+    "compileOnSave": false,
     "formatCodeOptions": {
         "indentSize": 4,
         "tabSize": 4,
