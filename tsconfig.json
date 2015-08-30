@@ -19,6 +19,7 @@
     "files": [
         "./typings/react/react-addons.d.ts",
         "./typings/react/react.d.ts",
+        "./typings/redux/redux.d.ts",
         "./typings/tsd.d.ts",
         "./src/main.tsx"
     ],

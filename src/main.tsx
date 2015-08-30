@@ -1,20 +1,25 @@
-import * as React from "react/addons";
+import * as React from "react";
+import * as Router from 'react-router';
 
-export interface Props {
-  title: string
-}
+var {Route} = Router;
 
+declare var Tessel;
+
+export interface Props {}
 export interface State {}
 
-export class Component extends React.Component<Props, State> {
+class App extends React.Component<Props, State> {
   render() {
     return (
-      <div>{this.props.title}</div>
+      <div>Hello</div>
     )
   }
 }
 
-React.render(
-  <Component title='aasdf'/>,
-   document.getElementById("app")
-);
+var routes = (
+  <Route handler={App} path="/"></Route>
+)
+
+Router.run(routes, function (Handler) {
+  React.render(<Handler/>, document.body);
+});

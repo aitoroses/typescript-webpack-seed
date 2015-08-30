@@ -24,14 +24,15 @@ module.exports = {
   },
 
   output: {
-    // library: "App",
-    // libraryTarget: 'umd',
     path: "dist",
     filename: "bundle.js"
   },
 
   externals: {
-    'react/addons': 'React'
+    react: 'React',
+    'react-router': 'ReactRouter',
+    redux: 'Redux',
+    moment: 'moment'
   },
 
   module: {
@@ -56,7 +57,7 @@ module.exports = {
       '', '.js', '.jsx', '.ts', '.tsx'
     ],
     alias: {
-      react: 'react/addons'
+      'react/addons': 'react'
     }
   },
 
